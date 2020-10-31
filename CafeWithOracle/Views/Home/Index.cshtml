@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Welcome to OracleCafe</h1>
+
+<h3>
+    @ViewBag.Error
+    </h3>
+<ul>
+    <li>Tables</li>
+    <li>
+        <ul>
+            <li>
+                @Html.ActionLink("OrderList", "OrderList", null)
+            </li>
+            <li>
+                @Html.ActionLink("CafeList", "CafeList", new { /* id=item.PrimaryKey */ })
+            </li>
+            <li>
+                @Html.ActionLink("MealList", "MealList", new { /* id=item.PrimaryKey */ })
+            </li>
+            <li>
+                @Html.ActionLink("WaiterList", "WaiterList", new { /* id=item.PrimaryKey */ })
+            </li>
+            <li>
+                @Html.ActionLink("CartList", "CartList", new { /* id=item.PrimaryKey */ })
+            </li>
+        </ul>
+    </li>
+    <li>Views</li>
+    <li>
+        <ul>
+            <li>
+                @Html.ActionLink("BillList", "BillList", null)
+            </li>
+            <li>
+                @Html.ActionLink("BillDateList", "BillDateList", new { /* id=item.PrimaryKey */ })
+            </li>
+            <li>
+                @Html.ActionLink("FullPriceCartList", "FullPriceCartList", null)
+            </li>
+        </ul>
+    </li>
+    <li>Stored Procedure</li>
+    <li>
+        <ul>
+            <li>
+                @Html.ActionLink("ChangePrice", "ChangePrice", null)
+            </li>
+            <li>
+                @Html.ActionLink("ChangeQuantity", "ChangeQuantity", new { /* id=item.PrimaryKey */ })
+            </li>
+            <li>
+                @using (Html.BeginForm("ChangeMeal", "Home"))
+                {
+                    <input type="text" name="Name" />
+                    <input type="text" name="discount" />
+                    <input type="submit" value="Update Meal" />
+                }
+            </li>
+            <li>
+                @using (Html.BeginForm("UpdatePrice", "Home"))
+                {
+                    <input type="text" name="Name" />
+                    <input type="text" name="price" />
+                    <input type="submit" value="Update Price" />
+                }
+            </li>
+        </ul>
+    </li>
+</ul>
+
